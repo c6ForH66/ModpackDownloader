@@ -1,0 +1,2 @@
+# Fill in your api key and rename this file to api_key.py
+CF_API_KEY = "your api key here"
