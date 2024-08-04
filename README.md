@@ -4,6 +4,7 @@ Minecraft Modpack Downloader
 - Support for curseforge modpacks and ftb modpacks
 - No "blocked mods" problem, fully automatical
 - Ultrafast download by aria2 (download alomst any modpack in a minute with a 1Gbps connection)
+- A real usable UI, no console commands
 
 ## Installation
 ### Windows
@@ -22,3 +23,9 @@ Minecraft Modpack Downloader
 - For FTB packs, you have to enter pack id and version id. To get these values, go to FTB website, choose your modpack and scroll down until you find something like this:
 
   ![image](https://github.com/user-attachments/assets/ab26d394-9323-44f9-8602-2123ec66d6f0)
+
+- When the download finishes, a dialog will pop up and shows the mc version, modloader version and minecraft dir. Create a new instance in your launcher and copy everything in the `minecraft_dir` into the game directory
+
+## TODO
+- Better UI
+- Export as multimc-compatible format so you can install it with only one drag!
