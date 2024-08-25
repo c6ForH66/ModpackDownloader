@@ -1,5 +1,8 @@
 # ModpackDownloader
 Minecraft Modpack Downloader
+
+### **Download from [github releases page](https://github.com/c6ForH66/ModpackDownloader/releases)**
+
 ## Features
 - Support for curseforge modpacks and ftb modpacks
 - No "blocked mods" problem, fully automatical
