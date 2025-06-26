@@ -184,3 +184,4 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         layout.addWidget(text_edit)
         dialog.setLayout(layout)
         dialog.exec()
+        self.task_manager.download_complete.disconnect()

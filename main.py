@@ -5,14 +5,13 @@ import os
 import sys
 
 from PyQt6.QtWidgets import *
+from modpack_downloader.main_window import MainWindow
 
 logger = logging.getLogger(os.path.basename(__file__))
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
                         format="[%(asctime)s] [%(name)-s] [%(threadName)s] [%(levelname)-s] %(message)s")
-
-    from modpack_downloader.main_window import MainWindow
 
     app = QApplication(sys.argv)
     if os.environ.get("CF_API_KEY") is None:

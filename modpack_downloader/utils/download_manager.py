@@ -12,6 +12,7 @@ from ..rpc.event_listener import Aria2EventListener
 
 logger = logging.getLogger(os.path.basename(__file__))
 
+
 class DownloadOptions(BaseModel):
     model_config = ConfigDict(alias_generator=lambda field_name: re.sub("_", "-", field_name))
     url: str
@@ -68,6 +69,8 @@ class DownloadManager(QObject):
         self.task_list: list[A2Task] = []
         self.event_listener.onDownloadComplete.connect(self.mod_complete)
         self.event_listener.onDownloadError.connect(self.download_error)
+        self.stop.connect(self.shutdown)
+        self.start.connect(self.start_download_modpack)
         self.total_mods = 0
         self.completed_mods = 0
         self.retry_counter = {}
@@ -75,8 +78,6 @@ class DownloadManager(QObject):
     def run(self):
         self.timer = QTimer()
         self.timer.timeout.connect(self.refresh_data)
-        self.stop.connect(self.shutdown)
-        self.start.connect(self.start_download_modpack)
 
     @pyqtSlot(list)
     def start_download_modpack(self, modlist: list[DownloadOptions]):
