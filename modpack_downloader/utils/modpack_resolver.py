@@ -1,7 +1,6 @@
 import json
 import logging
 import os
-import pprint
 import re
 import threading
 import urllib.parse
@@ -33,6 +32,11 @@ class FileType(IntEnum):
     MOD = 6
     RESOURCEPACK = 12
     SHADER = 6552
+
+    @classmethod
+    def _missing_(cls, key):
+        return cls.MOD
+
 
 
 SUBFOLDER = {
